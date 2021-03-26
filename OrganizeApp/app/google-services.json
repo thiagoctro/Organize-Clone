@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "394401630067",
+    "project_id": "organize-clone-82782",
+    "storage_bucket": "organize-clone-82782.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394401630067:android:570ee5cc75cccd5d23e706",
+        "android_client_info": {
+          "package_name": "com.organizeclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394401630067-2jf6fh8pcqsked2mi6kl84cgacrb8h5p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASqiaQPf47yn-I4RdUAF8t0THC2kqEd7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394401630067-2jf6fh8pcqsked2mi6kl84cgacrb8h5p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
