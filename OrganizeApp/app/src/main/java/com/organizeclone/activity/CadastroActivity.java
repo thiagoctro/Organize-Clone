@@ -1,17 +1,16 @@
-package com.organizeclone;
+package com.organizeclone.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.heinrichreimersoftware.materialintro.app.IntroActivity;
+import com.organizeclone.R;
 
-public class MainActivity extends IntroActivity {
+public class CadastroActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_cadastro);
     }
 }
