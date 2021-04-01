@@ -6,14 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
 import com.organizeclone.R;
 import com.organizeclone.activity.CadastroActivity;
 import com.organizeclone.activity.LoginActivity;
+import com.organizeclone.config.ConfigFirebase;
 
 public class MainActivity extends IntroActivity {
+
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,5 +66,24 @@ public class MainActivity extends IntroActivity {
 
     public void btCadastrar(View view){
         startActivity( new Intent( this, CadastroActivity.class) );
+    }
+
+    public void verificarUsuarioLogado(){
+        auth = ConfigFirebase.getAutenticacao();
+
+        if ( auth.getCurrentUser() != null ){
+            abrirActivity();
+        }
+
+    }
+
+    public void abrirActivity(){
+        startActivity( new Intent( this, PrincipalActivity.class ));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        verificarUsuarioLogado();
     }
 }

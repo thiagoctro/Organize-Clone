@@ -14,4 +14,13 @@
         <!-- Customize your theme here. -->
         <item name="android:textColor">@color/design_default_color_on_secondary</item>
     </style>
+
+    <style name="Theme.OrganizeClone.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.OrganizeClone.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.OrganizeClone.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
