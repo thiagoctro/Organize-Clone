@@ -18,7 +18,10 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.organizeclone.R;
 import com.organizeclone.config.ConfigFirebase;
+import com.organizeclone.helper.Base64Custom;
 import com.organizeclone.model.Usuario;
+
+import java.util.Base64;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -100,6 +103,9 @@ public class CadastroActivity extends AppCompatActivity {
 
                 if ( task.isSuccessful() ){
 
+                    String idUsuario = Base64Custom.codificarBase64( usuario.getEmail() );
+                    usuario.setId( idUsuario );
+                    usuario.salvar();
                     finish();
 
                 }else {
