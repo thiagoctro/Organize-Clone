@@ -12,12 +12,18 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
+import android.widget.TextView;
 
 import com.organizeclone.R;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
 public class PrincipalActivity extends AppCompatActivity {
 
     private FloatingActionButton fab1, fab2;
+    private MaterialCalendarView calendarView;
+    private TextView textSaldacao, textSaldo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +31,13 @@ public class PrincipalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_principal);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        textSaldacao = findViewById( R.id.textSaldacao );
+        textSaldo = findViewById( R.id.textSaldo );
+
+        //set calendarView
+        calendarView = findViewById( R.id.calendarView );
+        configurarCalendario();
 
         //set FloatingActionButton
         FloatingActionButton fabDespesa = findViewById(R.id.fab_despesa);
@@ -43,9 +56,20 @@ public class PrincipalActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
+    public void configurarCalendario(){
 
+        CharSequence meses[] = { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" };
+        calendarView.setTitleMonths( meses );
 
+        calendarView.setOnMonthChangedListener(new OnMonthChangedListener() {
+            @Override
+            public void onMonthChanged(MaterialCalendarView widget, CalendarDay date) {
+
+            }
+        });
+
+    }
+    
 }
